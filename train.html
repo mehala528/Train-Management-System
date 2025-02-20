@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Booking Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #0056b3;
+            padding: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Train Booking Dashboard
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#search">Search Trains</a></li>
+            <li><a href="#booking">Book Tickets</a></li>
+            <li><a href="#history">Booking History</a></li>
+            <li><a href="#tracking">Train Status</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="login">
+            <h2>User Login</h2>
+            <input type="text" placeholder="Username" id="username">
+            <input type="password" placeholder="Password" id="password">
+            <button onclick="loginUser()">Login</button>
+        </section>
+    </div>
+    
+    <div class="container">
+        <section id="search">
+            <h2>Search for Train Schedules</h2>
+            <input type="text" placeholder="From" id="fromStation">
+            <input type="text" placeholder="To" id="toStation">
+            <button onclick="searchTrains()">Search</button>
+            <div id="trainResults"></div>
+        </section>
+    </div>
+    
+    <div class="container">
+        <section id="booking">
+            <h2>Book & Cancel Tickets</h2>
+            <button onclick="bookTicket()">Book Ticket</button>
+            <button onclick="cancelTicket()">Cancel Ticket</button>
+        </section>
+    </div>
+    
+    <div class="container">
+        <section id="history">
+            <h2>View Booking History</h2>
+            <button onclick="viewHistory()">View History</button>
+            <div id="historyResults"></div>
+        </section>
+    </div>
+    
+    <div class="container">
+        <section id="tracking">
+            <h2>Train Status Tracking</h2>
+            <button onclick="trackTrain()">Track Train</button>
+            <div id="map"></div>
+        </section>
+    </div>
+</body>
+</html>
